@@ -12,13 +12,14 @@ you which one is yours. Open that folder and read its readme.
 Do only your own folder. The others are visible because this repo is public,
 not because we want more from you.
 
-**Please do not open a pull request or an issue against this repository.** A
-pull request would publish your work where every other candidate can read it,
-and we do not review submissions here. Send yours through your application
-instead, as described under [Submission](#submission).
+**Please do not open a pull request against this repository.** A pull request
+would publish your work where every other candidate can read it, and we do not
+review submissions here. Send yours through your application instead, as
+described under [Submission](#submission).
 
-If you fork this repository, note that your work may be publicly linked back to
-it. Cloning and pushing to a repository of your own avoids that.
+To get a copy you can work in, use the green **Use this template** button, or
+clone this repository and push to one of your own. Prefer either over forking: a
+fork can be publicly linked back to this repo, and so to your solution.
 
 ## The time budget is real
 

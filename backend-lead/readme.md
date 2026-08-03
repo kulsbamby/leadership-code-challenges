@@ -6,7 +6,7 @@
 
 We operate a regulated, real-money transactional platform with high transaction volume. Players hold wallets; money enters through third-party payment service providers (PSPs) and leaves through withdrawals. Correctness of money movement is the single most important property of the system - a bug here is not a bug, it is an incident.
 
-You'll work in a small starter codebase ([`starter/`](starter/)) that mirrors our real stack and conventions: TypeScript, Express, Sequelize, PostgreSQL, Jest. Fork or clone this repository and work in `backend-lead/starter/`. Read [its README](starter/README.md) first - the conventions listed there are part of the exercise.
+You'll work in a small starter codebase ([`starter/`](starter/)) that mirrors our real stack and conventions: TypeScript, Express, Sequelize, PostgreSQL, Jest. Take your own copy of this repository (see the [root readme](../readme.md)) and work in `backend-lead/starter/`. Read [its README](starter/README.md) first - the conventions listed there are part of the exercise.
 
 ## Part A - Implement the deposit → wager → withdrawal flow (~3h)
 
