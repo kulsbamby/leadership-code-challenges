@@ -1,7 +1,7 @@
 # 99Tech Engineering Leadership Challenges
 
 Take-home challenges for our engineering leadership roles. Your recruiter told
-you which one is yours — open that folder and read its readme.
+you which one is yours. Open that folder and read its readme.
 
 | Role                                 | Folder                                             | Time budget |
 | ------------------------------------ | -------------------------------------------------- | ----------- |
@@ -20,7 +20,7 @@ to this repo.
 Each challenge is scoped to about four hours. We would rather read an
 unfinished submission with clear reasoning than a polished one that ate your
 weekend. Where a challenge sets a page or word limit, we stop reading at the
-limit — editing is part of the exercise.
+limit. Editing is part of the exercise.
 
 ## AI tools
 
@@ -33,7 +33,7 @@ ownership, not abstinence.
 ## Assumptions
 
 Every challenge deliberately leaves gaps. Invent reasonable context and state
-the assumption inline rather than waiting on us — how you frame a missing
+the assumption inline rather than waiting on us. How you frame a missing
 constraint is part of what we read.
 
 ## Submission
