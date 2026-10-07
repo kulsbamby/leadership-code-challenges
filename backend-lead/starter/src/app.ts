@@ -5,6 +5,7 @@ import { membersRouter } from './routes/members';
 import { depositsRouter } from './routes/deposits';
 import { pspRouter } from './routes/psp';
 import { walletsRouter } from './routes/wallets';
+import { withdrawalsRouter } from './routes/withdrawals';
 import { AppError } from './lib/errors';
 import { ErrorCode, HttpStatus, Routes } from './lib/constants';
 
@@ -31,6 +32,7 @@ export function createApp() {
   app.use(Routes.DEPOSITS, depositsRouter);
   app.use(Routes.PSP, pspRouter);
   app.use(Routes.WALLETS, walletsRouter);
+  app.use(Routes.WITHDRAWALS, withdrawalsRouter);
 
   app.use(errorHandler);
   return app;
