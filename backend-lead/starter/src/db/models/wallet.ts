@@ -1,4 +1,5 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
+import { MONEY_PRECISION, MONEY_SCALE, Table } from '../../lib/constants';
 
 export class Wallet extends Model {
   declare id: string;
@@ -12,8 +13,8 @@ export function initWallet(sequelize: Sequelize): void {
     {
       id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true },
       memberId: { type: DataTypes.UUID, allowNull: false },
-      balance: { type: DataTypes.DECIMAL(36, 18), allowNull: false, defaultValue: '0' },
+      balance: { type: DataTypes.DECIMAL(MONEY_PRECISION, MONEY_SCALE), allowNull: false, defaultValue: '0' },
     },
-    { sequelize, tableName: 'wallets', underscored: true },
+    { sequelize, tableName: Table.WALLETS, underscored: true },
   );
 }

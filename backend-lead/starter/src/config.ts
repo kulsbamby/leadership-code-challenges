@@ -1,12 +1,13 @@
 import 'dotenv/config';
+import { DEFAULT_DATABASE_URL, DEFAULT_DATABASE_URL_TEST, DEFAULT_PORT, Env } from './lib/constants';
 
-const env = process.env.NODE_ENV ?? 'development';
+const env = process.env.NODE_ENV ?? Env.DEVELOPMENT;
 
 export const config = {
   env,
-  port: Number(process.env.PORT ?? 3000),
+  port: Number(process.env.PORT ?? DEFAULT_PORT),
   databaseUrl:
-    env === 'test'
-      ? process.env.DATABASE_URL_TEST ?? 'postgres://wallet:wallet@localhost:5439/wallet_test'
-      : process.env.DATABASE_URL ?? 'postgres://wallet:wallet@localhost:5439/wallet',
+    env === Env.TEST
+      ? process.env.DATABASE_URL_TEST ?? DEFAULT_DATABASE_URL_TEST
+      : process.env.DATABASE_URL ?? DEFAULT_DATABASE_URL,
 };

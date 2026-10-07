@@ -1,4 +1,5 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
+import { Table } from '../../lib/constants';
 
 export class Member extends Model {
   declare id: string;
@@ -11,6 +12,6 @@ export function initMember(sequelize: Sequelize): void {
       id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true },
       username: { type: DataTypes.STRING, allowNull: false, unique: true },
     },
-    { sequelize, tableName: 'members', underscored: true },
+    { sequelize, tableName: Table.MEMBERS, underscored: true },
   );
 }

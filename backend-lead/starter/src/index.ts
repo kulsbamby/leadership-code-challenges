@@ -1,5 +1,6 @@
 import { createApp } from './app';
 import { config } from './config';
+import { SERVICE_NAME } from './lib/constants';
 import { sequelize } from './db/sequelize';
 
 async function main() {
@@ -7,7 +8,7 @@ async function main() {
   const app = createApp();
   app.listen(config.port, () => {
     // eslint-disable-next-line no-console
-    console.log(`mini-wallet-service listening on :${config.port}`);
+    console.log(`${SERVICE_NAME} listening on :${config.port}`);
   });
 }
 
