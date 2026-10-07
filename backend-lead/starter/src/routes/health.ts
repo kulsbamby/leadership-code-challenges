@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import { sequelize } from '../db/sequelize';
+import { HEALTH_OK, RoutePath } from '../lib/constants';
 
 export const healthRouter = Router();
 
-healthRouter.get('/', async (_req, res) => {
+healthRouter.get(RoutePath.ROOT, async (_req, res) => {
   await sequelize.authenticate();
-  res.json({ status: 'ok' });
+  res.json({ status: HEALTH_OK });
 });

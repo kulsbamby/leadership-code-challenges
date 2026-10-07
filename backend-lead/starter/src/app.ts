@@ -2,24 +2,29 @@ import express, { ErrorRequestHandler } from 'express';
 import { ZodError } from 'zod';
 import { healthRouter } from './routes/health';
 import { membersRouter } from './routes/members';
+import { AppError } from './lib/errors';
+import { ErrorCode, HttpStatus, Routes } from './lib/constants';
 
 const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
+  if (err instanceof AppError) {
+    res.status(err.status).json({ error: err.code, ...err.extra });
+    return;
+  }
   if (err instanceof ZodError) {
-    res.status(400).json({ error: 'validation_error', details: err.issues });
+    res.status(HttpStatus.BAD_REQUEST).json({ error: ErrorCode.VALIDATION_ERROR, details: err.issues });
     return;
   }
   // eslint-disable-next-line no-console
   console.error(err);
-  res.status(500).json({ error: 'internal_error' });
+  res.status(HttpStatus.INTERNAL_ERROR).json({ error: ErrorCode.INTERNAL_ERROR });
 };
 
 export function createApp() {
   const app = express();
   app.use(express.json());
 
-  app.use('/health', healthRouter);
-  app.use('/members', membersRouter);
-  // Mount your new routes here.
+  app.use(Routes.HEALTH, healthRouter);
+  app.use(Routes.MEMBERS, membersRouter);
 
   app.use(errorHandler);
   return app;
